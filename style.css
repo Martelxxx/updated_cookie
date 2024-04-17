@@ -1,5 +1,6 @@
 body {
     display: flex;
+    background-image: url('assets/deep.png');
     margin-left: 120px;
     margin-right: 120px;
     font-family: Arial, sans-serif;
