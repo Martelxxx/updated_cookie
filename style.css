@@ -1,0 +1,175 @@
+body {
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50; 
+}
+
+main {
+    /*margin: 120px;*/
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav article ads"
+        "footer footer footer";
+
+
+    justify-self: center;
+    align-self: center;    
+    grid-template-columns: 16rem 600px 16rem;
+    grid-template-rows: 50px 600px 50px;
+    gap: 25px;
+    min-height: 100vh;
+}
+
+header { 
+    font-family: libre-barcode 128 text-regular, sans-serif;
+    grid-area: header;
+    padding: 10px;
+    background-color: bisque; 
+    width: 600px; /* Add this */
+    display: flex; /* Add this */
+    justify-content: center; /* Add this */
+    align-items: center;
+    justify-self: center; /* Add this */
+    align-self: center;
+}
+aside  { 
+    grid-area: ads;
+    padding: 10px;
+    background-color: bisque;
+    height: 717px; /* Add this */
+    justify-content: center; /* Add this */
+    align-items: center;
+    justify-self: center; /* Add this */
+    align-self: center;
+ }
+footer { 
+    grid-area: footer;
+    padding: 10px;
+    background-color: bisque;
+    width: 600px; /* Add this */
+    display: flex; /* Add this */
+    justify-content: center; /* Add this */
+    align-items: center;
+    justify-self: center; /* Add this */
+    align-self: center; 
+}
+nav    { 
+    grid-area: nav;
+    padding: 10px;
+    background-color: bisque;
+    height: 717px; /* Add this */
+    justify-content: center; /* Add this */
+    align-items: center;
+    justify-self: center; /* Add this */
+    align-self: center;
+ }
+article { 
+    position: relative;
+    grid-area: article;
+    padding: 10px;
+    background-color: bisque;
+    background-image: url('assets/back.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+ }
+
+ #warning {
+    position: absolute; /* Add this */
+    top: 0; /* Add this */
+    left: 50%; /* Add this */
+    transform: translateX(-50%); /* Add this */
+    justify-content: center;
+    align-items: top;
+ }
+
+ #mute {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    display: center;
+    background-image: url('assets/mute.png');
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    transition: 0.9s ease-in-out;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#muteLabel {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+#btn {
+    position: absolute;
+    top: 20%;
+    left: 38%;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/danger.png');
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border: none;
+    outline: none;
+    transition: 0.9s ease-in-out;
+    border-radius: 180px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#btn:hover {
+    transform: translate(-0%, -0%) rotate(360deg);
+}
+
+@media(max-width: 600px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+ @font-face {
+    font-family: "Honk";
+    src: url(assets/Honk/Honk-Regular-VariableFont_MORF\,SHLN.ttf);
+}
+
+main > * {
+    border: 2px solid red;
+    overflow: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add this */
+    border-radius: 5px; /* Add this */
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.libre-barcode 128 text-regular {
+    font-family: "Libre Barcode 128 Text", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
