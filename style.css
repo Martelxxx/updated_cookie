@@ -1,6 +1,7 @@
 body {
     display: flex;
     background-image: url('assets/deep.png');
+    background-repeat: no-repeat ;
     margin-left: 120px;
     margin-right: 120px;
     font-family: Arial, sans-serif;
@@ -44,6 +45,7 @@ header {
     justify-self: center; /* Add this */
     align-self: center;
 }
+
 aside  { 
     grid-area: ads;
     padding: 10px;
@@ -54,17 +56,20 @@ aside  {
     justify-self: center; /* Add this */
     align-self: center;
  }
+
 footer { 
     grid-area: footer;
     padding: 10px;
     background-color: bisque;
     width: 600px; /* Add this */
+    height: 20px; /* Add this */
     display: flex; /* Add this */
     justify-content: center; /* Add this */
     align-items: center;
     justify-self: center; /* Add this */
     align-self: center; 
 }
+
 nav    { 
     grid-area: nav;
     padding: 10px;
@@ -75,6 +80,7 @@ nav    {
     justify-self: center; /* Add this */
     align-self: center;
  }
+
 article { 
     position: relative;
     grid-area: article;
@@ -106,6 +112,13 @@ article {
     color: #0f0; /* Color of the cursor */
     animation: blink 1s infinite; /* Animation for the cursor */
 }
+
+aside {
+    padding: 20px; /* Padding for the terminal */
+    text-align: center;
+    position: relative;
+    overflow: hidden;    ;
+    }
 
 @keyframes blink {
     0% { opacity: 1; }
@@ -168,7 +181,7 @@ article {
     transform: translate(-0%, -0%) rotate(360deg);
 }
 
-@media(max-width: 600px) {
+@media(min-width: 600px) {
     body {
         margin-top: 50px;
     }
@@ -196,8 +209,3 @@ main > * {
     }
 }
 
-.libre-barcode 128 text-regular {
-    font-family: "Libre Barcode 128 Text", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }

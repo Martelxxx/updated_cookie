@@ -1,12 +1,15 @@
 // <<=== All Variable Declarations  ===>>
 
 const content = document.querySelector('#content');
+const content2 = document.querySelector('#content2');
 let btn = document.querySelector('#btn');
 let muteButton = document.querySelector('#mute');
 let articleElement = document.querySelector('article');
 let footerElement = document.querySelector('footer'); 
-
 let headerElement = document.querySelector('header'); 
+let asideElement = document.querySelector('aside');
+
+let inputField = document.createElement('input');
 
 let imgElement = document.createElement('img'); // Create an image element
 imgElement.src = 'assets/Honk/logo.png'; // Set the source of the image
@@ -14,6 +17,26 @@ imgElement.src = 'assets/Honk/logo.png'; // Set the source of the image
 headerElement.appendChild(imgElement); // Append the image to the header
 imgElement.style.width = '30px'; // Set the width of the image
 imgElement.style.height = '30px'; // Set the height of the image
+
+let imgElement2 = document.createElement('img'); // Create an image element
+imgElement2.src = 'assets/silhouette2.png'; // Set the source of the image
+
+asideElement.appendChild(imgElement2); // Append the image to the header
+imgElement2.style.width = '200px'; // Set the width of the image
+imgElement2.style.height = '200px'; // Set the height of the image
+
+asideElement.style.position = 'relative';
+
+let circle = document.createElement('div');
+//circle.style.width = '50px';
+//circle.style.height = '65px';
+circle.style.backgroundColor = 'black';
+circle.style.borderRadius = '50%';
+circle.style.position = 'absolute';
+circle.style.top = '39%';
+circle.style.left = '50%';
+circle.style.transform = 'translate(-50%, -50%)';
+asideElement.appendChild(circle);
 
 let sound = new Audio('assets/fart.mp3');
 let sound2 = new Audio('assets/bite.mp3');
@@ -45,26 +68,33 @@ let clickCount2 = 0;
 let clickCount3 = 0;
 let clickCount4 = 0;
 let clickCount5 = 0;
+let autoCookie = 0;
 
-let newButton1;
-let newButton2;
-let newButton3;
-let newButton4;
-let newButton5;
-let newButton6;
-let newButton7;
-let newButton8;
-let newButton9;
-let newButton10;
-let newButton11;
-let newButton12;
-let newButton13;
-let newButton14;
+let newButton1; // Chocolate Chip Button
+let newButton2; // Sugar Cookie Button
+let newButton3; // Oatmeal Cookie Button
+let newButton4; // Cookie Dough Button
+let newButton5; // Choose For Me Button
+let newButton6; // Try Again Button
+let newButton7; // Vomit Button
+let newButton8; // Vomit Button
+let newButton9; // Vomit Button
+let newButton10; // Vomit Button
+let newButton11; // Vomit Button
+let newButton12; // Try Again Button
+let newButton13; // Choose For Me Button
+let newButton14; // Continue Button
+let newButton15; // Get Up Button
+let newButton16; // Run Button
+let newButton17; // Respondcr1 Button
 
 // <<=== All Function Declarations  ===>>
 
+//imgElement2.style.display = 'none';
 btn.style.display = 'none';
 warning.style.display = 'none';
+inputField.style.display = 'none'; // Initially hide the input field
+footerElement.appendChild(inputField); // Add the input field to the footer
 
 function onClick() {
     warning.style.display = 'none';
@@ -158,7 +188,7 @@ function ChocolateChip() {
     newButton6.style.position = 'absolute';
     newButton6.style.right = '33%';
     footerElement.appendChild(newButton6);
-    if (clickCount1 > 14) {
+    if (clickCount1 > 9) {
         newButton1.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
@@ -203,7 +233,7 @@ function SugarCookie() {
     newButton6.style.position = 'absolute';
     newButton6.style.right = '33%';
     footerElement.appendChild(newButton6);
-    if (clickCount2 > 14) {
+    if (clickCount2 > 11) {
         newButton2.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
@@ -248,7 +278,7 @@ function OatmealCookie() {
     newButton6.style.position = 'absolute';
     newButton6.style.right = '33%';
     footerElement.appendChild(newButton6);
-    if (clickCount3 > 14) {
+    if (clickCount3 > 8) {
         newButton3.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
@@ -294,7 +324,7 @@ function CookieDough() {
     newButton6.style.right = '33%';
     footerElement.appendChild(newButton6);
 
-    if (clickCount4 > 16) {
+    if (clickCount4 > 4) {
         newButton4.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
@@ -339,7 +369,7 @@ function PeanutButterCookie() {
     newButton6.style.position = 'absolute';
     newButton6.style.right = '33%';
     footerElement.appendChild(newButton6);
-    if (clickCount5 > 14) {
+    if (clickCount5 > 7) {
         newButton5.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
@@ -375,7 +405,7 @@ function ChooseForMe() {
 }
 
 setInterval(function() {
-    if (clickCount1 > 14 && !newButton7Created) {
+    if (clickCount1 > 9 && !newButton7Created) {
         newButton7 = document.createElement('button');
         articleElement.appendChild(newButton7);
         newButton7.innerHTML = '';
@@ -394,7 +424,7 @@ setInterval(function() {
         newButton7.style.borderRadius = '50%';
         newButton7Created = true;
     }
-    if (clickCount2 > 14 && !newButton8Created) {
+    if (clickCount2 > 11 && !newButton8Created) {
         newButton8 = document.createElement('button');
         articleElement.appendChild(newButton8);
         newButton8.innerHTML = '';
@@ -413,7 +443,7 @@ setInterval(function() {
         newButton8.style.borderRadius = '50%';
         newButton8Created = true;
     }
-    if (clickCount3 > 14 && !newButton9Created) {
+    if (clickCount3 > 8 && !newButton9Created) {
         newButton9 = document.createElement('button');
         articleElement.appendChild(newButton9);
         newButton9.innerHTML = '';
@@ -432,7 +462,7 @@ setInterval(function() {
         newButton9.style.borderRadius = '50%';
         newButton9Created = true;
     }
-    if (clickCount4 > 14 && !newButton10Created) {
+    if (clickCount4 > 4 && !newButton10Created) {
         newButton10 = document.createElement('button');
         articleElement.appendChild(newButton10);
         newButton10.innerHTML = '';
@@ -451,7 +481,7 @@ setInterval(function() {
         newButton10.style.borderRadius = '50%';
         newButton10Created = true;
     }
-    if (clickCount5 > 14 && !newButton11Created) {
+    if (clickCount5 > 7 && !newButton11Created) {
         newButton11 = document.createElement('button');
         articleElement.appendChild(newButton11);
         newButton11.innerHTML = '';
@@ -486,6 +516,14 @@ function ccScore() {
     counter1.style.position = 'absolute';
     counter1.style.bottom = '0';
     counter1.style.top = 'unset';
+    let newWidth = 5.55 * clickCount1; 
+    let newHeight = 7.22 * clickCount1; 
+    circle.style.width = newWidth + 'px'; 
+    circle.style.height = newHeight + 'px'; 
+    circle.style.transition = 'width 0.5s ease, height 0.5s ease';
+
+// The rest of your code...
+    console.log(newWidth, newHeight); // Log the new size to the console
 }
 
 function scScore() {
@@ -502,6 +540,11 @@ function scScore() {
     counter2.style.position = 'absolute';
     counter2.style.bottom = '0';
     counter2.style.top = 'unset';
+    let newWidth = 5.55 * clickCount1; 
+    let newHeight = 7.22 * clickCount1; 
+    circle.style.width = newWidth + 'px'; 
+    circle.style.height = newHeight + 'px'; 
+    circle.style.transition = 'width 0.5s ease, height 0.5s ease';
 }
 
 function ocScore() {
@@ -558,6 +601,15 @@ function newWorld() {
     counter1.style.display = 'none';
     articleElement.style.backgroundImage = 'url(assets/lights.png)';
     newButton14.style.display = 'none';
+    newButton15 = document.createElement('button');
+    newButton15.innerHTML = 'Get Up!';
+    newButton15.classList.add('cr1');
+    newButton15.style.margin = '10px';
+    newButton15.style.bottom = '4.3%';
+    newButton15.style.position = 'absolute';
+    newButton15.style.left = '30%';
+    footerElement.appendChild(newButton15);
+    newButton15.addEventListener('click', continueingResolution);
 }
 
 function newWorld2() {
@@ -566,6 +618,15 @@ function newWorld2() {
     counter2.style.display = 'none';
     articleElement.style.backgroundImage = 'url(assets/lights.png)';
     newButton14.style.display = 'none';
+    newButton15 = document.createElement('button');
+    newButton15.innerHTML = 'Get Up!';
+    newButton15.classList.add('cr1');
+    newButton15.style.margin = '10px';
+    newButton15.style.bottom = '4.3%';
+    newButton15.style.position = 'absolute';
+    newButton15.style.left = '30%';
+    footerElement.appendChild(newButton15);
+    newButton15.addEventListener('click', continueingResolution);
 }
 
 function newWorld3() {  
@@ -574,6 +635,15 @@ function newWorld3() {
     counter3.style.display = 'none';
     articleElement.style.backgroundImage = 'url(assets/lights.png)';
     newButton14.style.display = 'none';
+    newButton15 = document.createElement('button');
+    newButton15.innerHTML = 'Get Up!';
+    newButton15.classList.add('cr1');
+    newButton15.style.margin = '10px';
+    newButton15.style.bottom = '4.3%';
+    newButton15.style.position = 'absolute';
+    newButton15.style.left = '30%';
+    footerElement.appendChild(newButton15);
+    newButton15.addEventListener('click', continueingResolution);
 }
 
 function newWorld4() {
@@ -582,6 +652,15 @@ function newWorld4() {
     counter4.style.display = 'none';
     articleElement.style.backgroundImage = 'url(assets/lights.png)';
     newButton14.style.display = 'none';
+    newButton15 = document.createElement('button');
+    newButton15.innerHTML = 'Get Up!';
+    newButton15.classList.add('cr1');
+    newButton15.style.margin = '10px';
+    newButton15.style.bottom = '4.3%';
+    newButton15.style.position = 'absolute';
+    newButton15.style.left = '30%';
+    footerElement.appendChild(newButton15);
+    newButton15.addEventListener('click', continueingResolution);
 }
 
 function newWorld5() {
@@ -590,6 +669,51 @@ function newWorld5() {
     counter5.style.display = 'none';
     articleElement.style.backgroundImage = 'url(assets/lights.png)';
     newButton14.style.display = 'none';
+    newButton15 = document.createElement('button');
+    newButton15.innerHTML = 'Get Up!';
+    newButton15.classList.add('cr1');
+    newButton15.style.margin = '10px';
+    newButton15.style.bottom = '4.3%';
+    newButton15.style.position = 'absolute';
+    newButton15.style.left = '30%';
+    footerElement.appendChild(newButton15);
+    newButton15.addEventListener('click', continueingResolution);
+}
+
+function continueingResolution() {
+    newButton15.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/a51.png)';
+    content.innerHTML = 'You get up and there is a man in a suit sitting in front of you.';
+    newButton16 = document.createElement('button');
+    newButton16.innerHTML = 'Run!';
+    newButton16.classList.add('cr2');
+    newButton16.style.margin = '10px';
+    newButton16.style.bottom = '4.3%';
+    newButton16.style.position = 'absolute';
+    newButton16.style.left = '46%';
+    footerElement.appendChild(newButton16);
+    newButton17 = document.createElement('button');
+    newButton17.innerHTML = 'Respond';
+    newButton17.classList.add('cr3');
+    newButton17.style.bottom = '5.5%';
+    newButton17.style.position = 'absolute';
+    newButton17.style.left = '30%';
+    footerElement.appendChild(newButton17);
+    content2.innerHTML = 'He asks you how many cookies did you eat?';
+    content2.style.fontSize = '30px';
+    newButton17.addEventListener('click', function() {
+        newButton16.style.display = 'none';
+        inputField.style.display = 'block';
+        inputField.placeholder = 'Enter cookies eaten';
+});
+newButton16.addEventListener('click', run) 
+}
+
+function run() {
+    content.innerHTML = 'You try to run but more suits appear and you are caught!';
+    articleElement.style.backgroundImage = 'url(assets/run.png)';
+    newButton16.style.display = 'none';
+    content2.innerHTML = 'Last time; How many cookies did you eat?';
 }
 
 function reload() {
@@ -648,4 +772,7 @@ btn.addEventListener('click', function() {
     btnClicked = true;
 });
 
+// <<=== Misc  ===>>
 
+
+// Increment the counter and adjust the size of the circle
