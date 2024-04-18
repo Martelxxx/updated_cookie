@@ -3,7 +3,8 @@
 const content = document.querySelector('#content');
 let btn = document.querySelector('#btn');
 let muteButton = document.querySelector('#mute');
-let articleElement = document.querySelector('article'); 
+let articleElement = document.querySelector('article');
+let footerElement = document.querySelector('footer'); 
 
 let headerElement = document.querySelector('header'); 
 
@@ -32,6 +33,7 @@ let counter3 = document.querySelector('#counter3');
 let counter4 = document.querySelector('#counter4');
 let counter5 = document.querySelector('#counter5');
 
+let newButton6Created = true;
 let newButton7Created = false;
 let newButton8Created = false;
 let newButton9Created = false;
@@ -57,6 +59,7 @@ let newButton10;
 let newButton11;
 let newButton12;
 let newButton13;
+let newButton14;
 
 // <<=== All Function Declarations  ===>>
 
@@ -151,15 +154,24 @@ function ChocolateChip() {
     newButton6 = document.createElement('button');
     newButton6.innerHTML = 'Try again?';
     newButton6.classList.add('tryAgain');
-    newButton6.style.bottom = '20%';
+    newButton6.style.bottom = '5.5%';
     newButton6.style.position = 'absolute';
-    newButton6.style.left = '44%';
-    articleElement.appendChild(newButton6);
+    newButton6.style.right = '33%';
+    footerElement.appendChild(newButton6);
     if (clickCount1 > 14) {
         newButton1.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
+        newButton14 = document.createElement('button');
+        newButton14.innerHTML = 'Continue...';
+        newButton14.classList.add('continue');
+        newButton14.style.bottom = '5.5%';
+        newButton14.style.position = 'absolute';
+        newButton14.style.left = '30%';
+        footerElement.appendChild(newButton14);
+        newButton14.addEventListener('click', newWorld);
     }
+
     newButton1.addEventListener('click', ccScore);
     newButton6.addEventListener('click', reload);
     newButton1.addEventListener('click', function() {
@@ -187,15 +199,24 @@ function SugarCookie() {
     newButton6 = document.createElement('button');
     newButton6.innerHTML = 'Try again?';
     newButton6.classList.add('tryAgain');
-    newButton6.style.bottom = '20%';
+    newButton6.style.bottom = '5.5%';
     newButton6.style.position = 'absolute';
-    newButton6.style.left = '44%';
-    articleElement.appendChild(newButton6);
+    newButton6.style.right = '33%';
+    footerElement.appendChild(newButton6);
     if (clickCount2 > 14) {
         newButton2.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
+        newButton14 = document.createElement('button');
+        newButton14.innerHTML = 'Continue...';
+        newButton14.classList.add('continue');
+        newButton14.style.bottom = '5.5%';
+        newButton14.style.position = 'absolute';
+        newButton14.style.left = '30%';
+        footerElement.appendChild(newButton14);
+        newButton14.addEventListener('click', newWorld2);
     }
+
     newButton2.addEventListener('click', scScore);
     newButton6.addEventListener('click', reload);
     newButton2.addEventListener('click', function() {
@@ -223,15 +244,24 @@ function OatmealCookie() {
     newButton6 = document.createElement('button');
     newButton6.innerHTML = 'Try again?';
     newButton6.classList.add('tryAgain');
-    newButton6.style.bottom = '20%';
+    newButton6.style.bottom = '5.5%';
     newButton6.style.position = 'absolute';
-    newButton6.style.left = '44%';
-    articleElement.appendChild(newButton6);
+    newButton6.style.right = '33%';
+    footerElement.appendChild(newButton6);
     if (clickCount3 > 14) {
         newButton3.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
+        newButton14 = document.createElement('button');
+        newButton14.innerHTML = 'Continue...';
+        newButton14.classList.add('continue');
+        newButton14.style.bottom = '5.5%';
+        newButton14.style.position = 'absolute';
+        newButton14.style.left = '30%';
+        footerElement.appendChild(newButton14);
+        newButton14.addEventListener('click', newWorld3);
     }
+
     newButton3.addEventListener('click', ocScore);
     newButton6.addEventListener('click', reload);
     newButton3.addEventListener('click', function() {
@@ -259,15 +289,25 @@ function CookieDough() {
     newButton6 = document.createElement('button');
     newButton6.innerHTML = 'Try again?';
     newButton6.classList.add('tryAgain');
-    newButton6.style.bottom = '20%';
+    newButton6.style.bottom = '5.5%';
     newButton6.style.position = 'absolute';
-    newButton6.style.left = '44%';
-    articleElement.appendChild(newButton6);
-    if (clickCount4 > 14) {
+    newButton6.style.right = '33%';
+    footerElement.appendChild(newButton6);
+
+    if (clickCount4 > 16) {
         newButton4.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
+        newButton14 = document.createElement('button');
+        newButton14.innerHTML = 'Continue...';
+        newButton14.classList.add('continue');
+        newButton14.style.bottom = '5.5%';
+        newButton14.style.position = 'absolute';
+        newButton14.style.left = '30%';
+        footerElement.appendChild(newButton14);
+        newButton14.addEventListener('click', newWorld4);
     }
+
     newButton4.addEventListener('click', cdScore);
     newButton6.addEventListener('click', reload);
     newButton4.addEventListener('click', function() {
@@ -295,15 +335,24 @@ function PeanutButterCookie() {
     newButton6 = document.createElement('button');
     newButton6.innerHTML = 'Try again?';
     newButton6.classList.add('tryAgain');
-    newButton6.style.bottom = '20%';
+    newButton6.style.bottom = '5.5%';
     newButton6.style.position = 'absolute';
-    newButton6.style.left = '44%';
-    articleElement.appendChild(newButton6);
+    newButton6.style.right = '33%';
+    footerElement.appendChild(newButton6);
     if (clickCount5 > 14) {
         newButton5.style.display = 'none';
         content.innerHTML = 'You ate too many cookies and now you are sick!';
         articleElement.style.backgroundImage = 'url(assets/bed.png)';
+        newButton14 = document.createElement('button');
+        newButton14.innerHTML = 'Continue...';
+        newButton14.classList.add('continue');
+        newButton14.style.bottom = '5.5%';
+        newButton14.style.position = 'absolute';
+        newButton14.style.left = '30%';
+        footerElement.appendChild(newButton14);
+        newButton14.addEventListener('click', newWorld5);
     }
+
     newButton5.addEventListener('click', pbScore);
     newButton6.addEventListener('click', reload);
     newButton5.addEventListener('click', function() {
@@ -503,6 +552,46 @@ function pbScore() {
     counter5.style.top = 'unset';
 }
 
+function newWorld() {
+    content.innerHTML = 'Suddenly you wake up and you are in a different place!';
+    newButton7.style.display = 'none';
+    counter1.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/lights.png)';
+    newButton14.style.display = 'none';
+}
+
+function newWorld2() {
+    content.innerHTML = 'Suddenly you wake up and you are in a different place!';
+    newButton8.style.display = 'none';
+    counter2.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/lights.png)';
+    newButton14.style.display = 'none';
+}
+
+function newWorld3() {  
+    content.innerHTML = 'Suddenly you wake up and you are in a different place!';
+    newButton9.style.display = 'none';
+    counter3.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/lights.png)';
+    newButton14.style.display = 'none';
+}
+
+function newWorld4() {
+    content.innerHTML = 'Suddenly you wake up and you are in a different place!';
+    newButton10.style.display = 'none';
+    counter4.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/lights.png)';
+    newButton14.style.display = 'none';
+}
+
+function newWorld5() {
+    content.innerHTML = 'Suddenly you wake up and you are in a different place!';
+    newButton11.style.display = 'none';
+    counter5.style.display = 'none';
+    articleElement.style.backgroundImage = 'url(assets/lights.png)';
+    newButton14.style.display = 'none';
+}
+
 function reload() {
     location.reload();
 }
@@ -558,3 +647,5 @@ btn.addEventListener('click', function() {
     sound4.pause();
     btnClicked = true;
 });
+
+
